@@ -1,2 +1,13 @@
-c:\users\administrator\repos\opencv\opencv\x64\release\vc141.pdb
-c:\users\administrator\repos\opencv\opencv\x64\release\opencv.tlog\cl.command.1.tlog
+c:\users\dell\opencv\opencv\x64\release\opencv.pch
+c:\users\dell\opencv\opencv\x64\release\vc141.pdb
+c:\users\dell\opencv\opencv\x64\release\pch.obj
+c:\users\dell\opencv\opencv\x64\release\video.obj
+c:\users\dell\opencv\opencv\x64\release\main.obj
+c:\users\dell\opencv\opencv\x64\release\hough.obj
+c:\users\dell\opencv\opencv\x64\release\canny.obj
+c:\users\dell\opencv\opencv\x64\release\opencv.tlog\cl.command.1.tlog
+c:\users\dell\opencv\opencv\x64\release\opencv.tlog\cl.read.1.tlog
+c:\users\dell\opencv\opencv\x64\release\opencv.tlog\cl.write.1.tlog
+c:\users\dell\opencv\opencv\x64\release\opencv.tlog\link.command.1.tlog
+c:\users\dell\opencv\opencv\x64\release\opencv.tlog\link.read.1.tlog
+c:\users\dell\opencv\opencv\x64\release\opencv.tlog\link.write.1.tlog

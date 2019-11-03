@@ -4,4 +4,4 @@
   main.cpp
   video.cpp
   正在生成代码...
-  opencv.vcxproj -> C:\Users\DELL\opencv\x64\Debug\opencv.exe
+LINK : fatal error LNK1104: 无法打开文件“opencv_world347.lib”

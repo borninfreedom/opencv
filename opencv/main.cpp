@@ -23,10 +23,10 @@ int main()
 //	r_canny();
 
 //	houghlines();
-	houghlinesp();
+//	houghlinesp();
 //	houghcircles();
 
-
+	tune_canny();
 
 
 

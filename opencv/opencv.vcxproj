@@ -75,16 +75,16 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>C:\Program Files\opencv\build\include\opencv2;C:\Program Files\opencv\build\include\opencv;C:\Program Files\opencv\build\include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Program Files\opencv\build\x64\vc15\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>D:\opencv\build\include\opencv2;D:\opencv\build\include\opencv;D:\opencv\build\include;$(IncludePath)</IncludePath>
+    <LibraryPath>D:\opencv\build\x64\vc15\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>C:\Program Files\opencv\build\include\opencv2;C:\Program Files\opencv\build\include\opencv;C:\Program Files\opencv\build\include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Program Files\opencv\build\x64\vc15\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>D:\opencv\build\include\opencv2;D:\opencv\build\include\opencv;D:\opencv\build\include;$(IncludePath)</IncludePath>
+    <LibraryPath>D:\opencv\build\x64\vc15\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>

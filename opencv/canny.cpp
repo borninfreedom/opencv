@@ -1,9 +1,63 @@
 
 #include "pch.h"
+#include "canny.h"
 
 using namespace cv;
 using namespace std;
 
+Mat g_src, g_src1, g_dst, g_edge, g_gray;
+int g_nLowThres = 10;
+int g_nUpThres = 30;
+int g_nRatio = 0;
+
+static void on_TuneCanny(int, void*) {
+	if (getTrackbarPos("固定阈值比", "tune canny") == 1) {
+		setTrackbarPos("低阈值", "tune canny", g_nLowThres);
+		setTrackbarPos("高阈值", "tune canny", getTrackbarPos("低阈值", "tune canny") * 3);
+	}
+	else {
+		
+		setTrackbarPos("低阈值", "tune canny", g_nLowThres);
+		setTrackbarPos("高阈值", "tune canny", g_nUpThres);
+	}
+	Mat edge = g_edge;
+	Mat dst = g_dst;
+	Mat src1 = g_src1;
+	Mat gray = g_gray;
+	cvtColor(src1, gray, COLOR_BGR2GRAY);
+	blur(gray, edge, Size(3, 3));
+	/*Canny(edge, edge, g_nLowThres, g_nLowThres * 3, 3);*/
+	Canny(edge, edge, g_nLowThres, g_nUpThres, 3);
+	dst = Scalar::all(0);
+	src1.copyTo(dst, edge);
+	imshow("tune canny", dst);
+	//waitKey(0);
+}
+
+void tune_canny() {
+	namedWindow("tune canny", 1);
+	
+	g_src = imread("2 (2).jpg");
+	pyrUp(g_src, g_src);
+	//pyrDown(g_src, g_src);
+	//pyrDown(g_src, g_src);
+	g_src1 = g_src.clone();
+	g_dst.create(g_src1.size(), g_src1.type());
+	/*
+	cvtColor(g_src1, g_gray, COLOR_BGR2GRAY);
+	blur(g_gray, g_edge, Size(3, 3));
+	Canny(g_edge, g_edge, g_nLowThres, g_nLowThres * 3, 3);
+	g_dst = Scalar::all(0);
+	g_src1.copyTo(g_dst, g_edge);
+
+	imshow("tune canny", g_dst);*/
+	createTrackbar("低阈值", "tune canny", &g_nLowThres, 200, on_TuneCanny);
+	createTrackbar("高阈值", "tune canny", &g_nUpThres, 200, on_TuneCanny);
+	createTrackbar("固定阈值比", "tune canny", &g_nRatio, 1, on_TuneCanny);
+	on_TuneCanny(g_nLowThres, 0);
+	//on_FixRatio(g_nRatio, 0);
+	waitKey(0);
+}
 void canny(bool r,int speed,bool positive) {
 	namedWindow("canny", WINDOW_AUTOSIZE);
 	Mat src = imread("1 (4).jpg");

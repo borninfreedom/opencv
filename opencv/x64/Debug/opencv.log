@@ -1,4 +1,7 @@
-﻿  main.cpp
+﻿  pch.cpp
+  canny.cpp
+  hough.cpp
+  main.cpp
   video.cpp
   正在生成代码...
-  opencv.vcxproj -> C:\Users\Administrator\repos\opencv\x64\Debug\opencv.exe
+  opencv.vcxproj -> C:\Users\DELL\opencv\x64\Debug\opencv.exe

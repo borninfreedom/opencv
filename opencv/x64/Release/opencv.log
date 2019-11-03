@@ -1,7 +1,7 @@
-﻿  hough.cpp
+﻿  canny.cpp
   正在生成代码
-  2 of 246 functions ( 0.8%) were compiled, the rest were copied from previous compilation.
+  0 of 266 functions ( 0.0%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
-    9 functions had inline decision re-evaluated but remain unchanged
+    0 functions had inline decision re-evaluated but remain unchanged
   已完成代码的生成
-  opencv.vcxproj -> C:\Users\Administrator\repos\opencv\x64\Release\opencv.exe
+  opencv.vcxproj -> C:\Users\DELL\opencv\x64\Release\opencv.exe

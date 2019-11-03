@@ -26,13 +26,15 @@ int main()
 //	houghlinesp();
 //	houghcircles();
 
-	tune_canny();
+	//tune_canny();
 
+	tune_hough_circle();
 
 
 
 	//测试区
 	//vector<Vec4i> lines;
+
 
 	return 0;
 }

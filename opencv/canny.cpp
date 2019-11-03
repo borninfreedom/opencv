@@ -15,7 +15,7 @@ static char filename[50];
 static void on_TuneCanny(int, void*);
 static void on_ChooseFile(int,void*) {
 	
-	sprintf_s(filename, "2 (%d).jpg", g_nFile);
+	sprintf_s(filename, "4 (%d).jpg", g_nFile);
 	g_src = imread(filename);
 	//pyrDown(g_src, g_src);
 //	pyrDown(g_src, g_src);
@@ -53,7 +53,7 @@ static void on_TuneCanny(int, void*) {
 void tune_canny() {
 	namedWindow("tune canny", WINDOW_NORMAL);
 	namedWindow("origin", WINDOW_NORMAL);
-	g_src = imread("2 (2).jpg");
+	g_src = imread("4 (1).jpg");
 	pyrUp(g_src, g_src);		//根据图片的大小来选择是pyrUp还是Down
 	//pyrDown(g_src, g_src);
 	//pyrDown(g_src, g_src);

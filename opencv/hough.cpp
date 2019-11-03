@@ -7,6 +7,8 @@ Mat g_srcImage, g_midImage, g_dstImage;
 vector<Vec4i> g_lines;
 int g_nthreshold = 100;
 
+
+
 static void on_HoughLines(int, void*) {
 	cout << "calling on_hough" << endl;
 	Mat dstImage = g_dstImage.clone();
@@ -92,8 +94,50 @@ void houghlinesp() {
 	waitKey(0);*/
 }
 
+
+
+
+
+
+Mat g_srcHoughCircle, g_midHoughCircle, g_dstHoughCircle;
+static int g_nDP = 11;
+static int g_nUpThresHough = 200;
+static int g_nSumThres = 100;
+static int g_nMinDist = 10;
+static char g_cFileName[50];
+static int g_nFileIndex = 1;
+
+static void on_HoughCircle(int, void*) {
+	Mat src, mid, dst;
+	src=g_srcHoughCircle.clone();	//要注意是clone（），如果直接用=，是把两个变量的内存地址赋值。
+//	pyrUp(src, src);
+	imshow("原始图像", g_srcHoughCircle);
+	cvtColor(src, mid, COLOR_BGR2GRAY);
+	GaussianBlur(mid, mid, Size(9, 9), 2, 2);
+	
+	vector<Vec3f> circles;
+	HoughCircles(mid, circles, HOUGH_GRADIENT, g_nDP/10.0==0?1:(g_nDP/10.0), g_nMinDist == 0?1:g_nMinDist, g_nUpThresHough==0?1:g_nUpThresHough, g_nSumThres==0?1:g_nSumThres, 0, 0);
+
+	for (size_t i = 0; i < circles.size(); i++) {
+		Point center(cvRound(circles[i][0]), cvRound(circles[i][1]));
+		int radius = cvRound(circles[i][2]);
+		circle(src, center, 3, Scalar(0, 255, 0), -1, 8, 0);
+		circle(src, center, radius, Scalar(155, 50, 255), 3, 8, 0);
+	}
+	imshow("霍夫圆检测调参软件", src);
+}
+
+static void on_ChoseFile(int, void*) {
+//	if (g_nFileIndex == 60)	g_nFileIndex = 61;
+	cout << g_cFileName << endl;
+	sprintf_s(g_cFileName, "4 (%d).jpg", g_nFileIndex==0?1:g_nFileIndex);
+	g_srcHoughCircle = imread(g_cFileName);
+	on_HoughCircle(g_nDP, 0);
+}
+
 void houghcircles() {
-	Mat srcImage = imread("2 (1).jpg");
+
+	Mat srcImage = imread("4 (1).jpg");
 	Mat midImage, dstImage;
 	//pyrDown(srcImage, srcImage);
 //	pyrDown(srcImage, srcImage);
@@ -104,11 +148,27 @@ void houghcircles() {
 	HoughCircles(midImage, circles, HOUGH_GRADIENT, 1.1, 10, 200, 100, 0, 0);
 	for (size_t i = 0; i < circles.size(); i++) {
 		Point center(cvRound(circles[i][0]), cvRound(circles[i][1]));
-		int radius = cvRound(circles[i][2]); 
+		int radius = cvRound(circles[i][2]);
 		circle(srcImage, center, 3, Scalar(0, 255, 0), -1, 8, 0);
 		circle(srcImage, center, radius, Scalar(155, 50, 255), 3, 8, 0);
 
 	}
 	imshow("houghc", srcImage);
 	waitKey(0);
+}
+
+void tune_hough_circle() {
+	//cout << g_nFileIndex;
+	namedWindow("霍夫圆检测调参软件", WINDOW_NORMAL);
+	namedWindow("原始图像", WINDOW_NORMAL);
+	g_srcHoughCircle = imread("4 (1).jpg");
+	createTrackbar("分辨率/10", "霍夫圆检测调参软件", &g_nDP, 50, on_HoughCircle);
+	createTrackbar("Canny阈值", "霍夫圆检测调参软件", &g_nUpThresHough, 500, on_HoughCircle);
+	createTrackbar("累加器阈值", "霍夫圆检测调参软件", &g_nUpThresHough, 500, on_HoughCircle);
+	createTrackbar("圆心最小距离", "霍夫圆检测调参软件", &g_nMinDist, 100, on_HoughCircle);
+	createTrackbar("选择图片", "霍夫圆检测调参软件", &g_nFileIndex, 100, on_ChoseFile);
+	on_HoughCircle(g_nDP, 0);
+	on_ChoseFile(g_nFileIndex, 0);
+	waitKey(0);
+
 }

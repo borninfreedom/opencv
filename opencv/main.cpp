@@ -17,7 +17,7 @@ int main()
 	//@speed: if r==true,此项才会起作用，控制的是waitKey()的时间，即输出图像的连续性
 	//@positve: if r==true,此项才会起作用，if positive==true,阈值会从小到大变化，线条是逐渐减少的
 
-//	canny(false);
+	canny(true,50);
 
 	//对图片集进行canny检测
 //	r_canny();
@@ -28,8 +28,8 @@ int main()
 
 	//tune_canny();
 
-	//tune_hough_circle();
-	video_hough_circle();
+//	tune_hough_circle();
+//	video_hough_circle();
 
 
 	//测试区

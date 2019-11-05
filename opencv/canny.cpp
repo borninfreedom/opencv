@@ -69,12 +69,13 @@ void tune_canny() {
 	waitKey(0);
 }
 void canny(bool r,int speed,bool positive) {
-	namedWindow("canny", WINDOW_AUTOSIZE);
+	namedWindow("ԭʼͼ", WINDOW_NORMAL);
+	namedWindow("Canny", WINDOW_NORMAL);
 	Mat src = imread("1 (4).jpg");
 	pyrDown(src, src);
-	pyrDown(src, src);
+//	pyrDown(src, src);
 	Mat src1 = src.clone();
-	imshow("[origin]Canny", src);
+	imshow("ԭʼͼ", src);
 
 	Mat dst, edge, gray;
 	if (r == true) {
@@ -87,7 +88,7 @@ void canny(bool r,int speed,bool positive) {
 				dst = Scalar::all(0);
 				src1.copyTo(dst, edge);
 				cout << "Current ALPHA= " << alpha << endl;
-				imshow("Canny Process", dst);
+				imshow("Canny", dst);
 				waitKey(speed);
 			}
 			waitKey(5000);
@@ -99,7 +100,7 @@ void canny(bool r,int speed,bool positive) {
 				dst = Scalar::all(0);
 				src1.copyTo(dst, edge);
 				cout << "Current ALPHA= " << alpha << endl;
-				imshow("Canny Process", dst);
+				imshow("Canny", dst);
 				waitKey(speed);
 			}
 			waitKey(0);
@@ -113,7 +114,7 @@ void canny(bool r,int speed,bool positive) {
 				dst = Scalar::all(0);
 				src1.copyTo(dst, edge);
 				cout << "Current ALPHA= " << alpha << endl;
-				imshow("Canny Process", dst);
+				imshow("Canny", dst);
 				waitKey(speed);
 			}
 			waitKey(5000);
@@ -125,7 +126,7 @@ void canny(bool r,int speed,bool positive) {
 				dst = Scalar::all(0);
 				src1.copyTo(dst, edge);
 				cout << "Current ALPHA= " << alpha << endl;
-				imshow("Canny Process", dst);
+				imshow("Canny", dst);
 				waitKey(speed);
 			}
 			waitKey(0);

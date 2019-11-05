@@ -28,8 +28,8 @@ int main()
 
 	//tune_canny();
 
-	tune_hough_circle();
-
+	//tune_hough_circle();
+	video_hough_circle();
 
 
 	//测试区

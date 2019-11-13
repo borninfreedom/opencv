@@ -160,21 +160,41 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="canny.h" />
+    <ClInclude Include="face_detect.h" />
+    <ClInclude Include="generate_video.h" />
+    <ClInclude Include="harris.h" />
+    <ClInclude Include="harris_full.h" />
     <ClInclude Include="hough.h" />
+    <ClInclude Include="my_kmeans.h" />
+    <ClInclude Include="my_gui.h" />
     <ClInclude Include="pch.h" />
+    <ClInclude Include="PyramidLK.h" />
+    <ClInclude Include="take_photo.h" />
+    <ClInclude Include="testmygui.h" />
     <ClInclude Include="video.h" />
+    <ClInclude Include="video_face_detect.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="canny.cpp" />
+    <ClCompile Include="face_detect.cpp" />
+    <ClCompile Include="generate_video.cpp" />
+    <ClCompile Include="harris.cpp" />
+    <ClCompile Include="harris_full.cpp" />
     <ClCompile Include="hough.cpp" />
+    <ClCompile Include="my_kmeans.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="my_gui.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="PyramidLK.cpp" />
+    <ClCompile Include="take_photo.cpp" />
+    <ClCompile Include="testmygui.cpp" />
     <ClCompile Include="video.cpp" />
+    <ClCompile Include="video_face_detect.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

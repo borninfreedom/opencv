@@ -27,6 +27,36 @@
     <ClInclude Include="hough.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="PyramidLK.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="harris.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="my_gui.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="testmygui.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="harris_full.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="my_kmeans.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="face_detect.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="video_face_detect.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="take_photo.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="generate_video.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -42,6 +72,36 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="hough.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="PyramidLK.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="harris.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="my_gui.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="testmygui.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="harris_full.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="my_kmeans.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="face_detect.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="video_face_detect.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="take_photo.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="generate_video.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

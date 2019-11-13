@@ -8,6 +8,10 @@ using namespace std;
 
 int main()
 {
+	
+
+
+
 	//执行视频流的canny检测
 //	videoCanny(); 
 
@@ -17,7 +21,7 @@ int main()
 	//@speed: if r==true,此项才会起作用，控制的是waitKey()的时间，即输出图像的连续性
 	//@positve: if r==true,此项才会起作用，if positive==true,阈值会从小到大变化，线条是逐渐减少的
 
-	canny(true,50);
+	//canny(true,50);
 
 	//对图片集进行canny检测
 //	r_canny();
@@ -35,7 +39,15 @@ int main()
 	//测试区
 	//vector<Vec4i> lines;
 
+	//PyramidLK();
 
+	//corner_harris();
+//	harris_full();
+//	my_kmeans();
+//	face_detect();
+//	video_face_detect();
+//	take_photo();
+	generate_video();
 	return 0;
 }
 

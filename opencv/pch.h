@@ -14,6 +14,16 @@
 #include <iostream>
 #include "canny.h"
 #include <string>
+#include "harris.h"
+#include "my_gui.h"
+#include "testmygui.h"
+#include "harris_full.h"
+#include "my_kmeans.h"
+#include "face_detect.h"
+#include "video_face_detect.h"
+#include "take_photo.h"
+#include "generate_video.h"
+#include "PyramidLK.h"
 #include <opencv2/opencv.hpp>
 #include <opencv2/highgui/highgui.hpp>
 #include <opencv2/imgproc/imgproc.hpp>

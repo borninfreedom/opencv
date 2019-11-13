@@ -111,6 +111,9 @@ static void on_HoughCircle(int, void*) {
 	Mat src, mid, dst;
 	src=g_srcHoughCircle.clone();	//要注意是clone（），如果直接用=，是把两个变量的内存地址赋值。
 //	pyrUp(src, src);
+	pyrDown(src, src);
+	pyrDown(src, src);
+	pyrDown(src, src);
 	imshow("原始图像", g_srcHoughCircle);
 	cvtColor(src, mid, COLOR_BGR2GRAY);
 	GaussianBlur(mid, mid, Size(9, 9), 2, 2);
@@ -130,7 +133,7 @@ static void on_HoughCircle(int, void*) {
 static void on_ChoseFile(int, void*) {
 //	if (g_nFileIndex == 60)	g_nFileIndex = 61;
 	cout << g_cFileName << endl;
-	sprintf_s(g_cFileName, "4 (%d).jpg", g_nFileIndex==0?1:g_nFileIndex);
+	sprintf_s(g_cFileName, "5 (%d).jpg", g_nFileIndex==0?1:g_nFileIndex);
 	g_srcHoughCircle = imread(g_cFileName);
 	on_HoughCircle(g_nDP, 0);
 }
@@ -161,7 +164,7 @@ void tune_hough_circle() {
 	//cout << g_nFileIndex;
 	namedWindow("霍夫圆检测调参软件", WINDOW_NORMAL);
 	namedWindow("原始图像", WINDOW_NORMAL);
-	g_srcHoughCircle = imread("4 (1).jpg");
+	g_srcHoughCircle = imread("5 (1).jpg");
 	createTrackbar("分辨率/10", "霍夫圆检测调参软件", &g_nDP, 50, on_HoughCircle);
 	createTrackbar("Canny阈值", "霍夫圆检测调参软件", &g_nUpThresHough, 500, on_HoughCircle);
 	createTrackbar("累加器阈值", "霍夫圆检测调参软件", &g_nSumThres, 500, on_HoughCircle);
@@ -184,7 +187,7 @@ static void on_VideoHoughCircle(int,void*) {
 	g_nSumThresVHC = getTrackbarPos("累加器阈值", "视频流霍夫圆检测调参");
 }
 void video_hough_circle() {
-	namedWindow("视频流霍夫圆检测调参", WINDOW_NORMAL);
+	namedWindow("视频流霍夫圆检测调参", 1);
 	createTrackbar("分辨率/10", "视频流霍夫圆检测调参", &g_nDPVHC, 200, on_VideoHoughCircle);
 	createTrackbar("Canny阈值", "视频流霍夫圆检测调参", &g_nCannyThresVHC, 500, on_VideoHoughCircle);
 	createTrackbar("累加器阈值", "视频流霍夫圆检测调参", &g_nSumThresVHC, 500, on_VideoHoughCircle);

@@ -57,6 +57,9 @@
     <ClInclude Include="generate_video.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="pingpang_detect.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -102,6 +105,9 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="generate_video.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="pingpang_detect.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

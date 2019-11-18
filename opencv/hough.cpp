@@ -178,8 +178,8 @@ void tune_hough_circle() {
 
 Mat g_frame, g_frame1, g_midFrame;
 int g_nDPVHC = 10;
-int g_nCannyThresVHC = 100;
-int g_nSumThresVHC = 100;
+int g_nCannyThresVHC = 80;
+int g_nSumThresVHC = 80;
 
 static void on_VideoHoughCircle(int,void*) {
 	g_nDPVHC = getTrackbarPos("分辨率/10", "视频流霍夫圆检测调参");

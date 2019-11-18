@@ -47,7 +47,8 @@ int main()
 //	face_detect();
 //	video_face_detect();
 //	take_photo();
-	generate_video();
+//	generate_video();
+	pingpang_detect();
 	return 0;
 }
 

@@ -23,6 +23,7 @@
 #include "video_face_detect.h"
 #include "take_photo.h"
 #include "generate_video.h"
+#include "pingpang_detect.h"
 #include "PyramidLK.h"
 #include <opencv2/opencv.hpp>
 #include <opencv2/highgui/highgui.hpp>

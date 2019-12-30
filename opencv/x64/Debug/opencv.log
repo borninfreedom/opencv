@@ -1,7 +1,0 @@
-﻿  pch.cpp
-  canny.cpp
-  hough.cpp
-  main.cpp
-  video.cpp
-  正在生成代码...
-LINK : fatal error LNK1104: 无法打开文件“opencv_world347.lib”
